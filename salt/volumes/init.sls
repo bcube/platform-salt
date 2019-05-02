@@ -72,10 +72,10 @@
             done
             [ ! $DISK_READY_RETRIES -eq $DISK_READY_RETRY_LIMIT ]
 
-    volumes-format-{{ device }}:
-      cmd.run:
-        - name: mkfs -t {{ fs_type  }} {{ mkfs_opts }} {{ device }}
-        - unless: cat /etc/fstab | grep "{{ device }}"
+    #volumes-format-{{ device }}:
+      #cmd.run:
+        #- name: mkfs -t {{ fs_type  }} {{ mkfs_opts }} {{ device }}
+        #- unless: cat /etc/fstab | grep "{{ device }}"
 
     volumes-mount-{{ device }}:
       mount.mounted:
