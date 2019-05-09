@@ -77,12 +77,12 @@
         #- name: mkfs -t {{ fs_type  }} {{ mkfs_opts }} {{ device }}
         #- unless: cat /etc/fstab | grep "{{ device }}"
 
-    volumes-mount-{{ device }}:
-      mount.mounted:
-        - name: {{ mountpoint }}
-        - device: {{ device }}
-        - fstype: {{ fs_type }}
-        - mkmnt: True
+    #volumes-mount-{{ device }}:
+      #mount.mounted:
+        #- name: {{ mountpoint }}
+        #- device: {{ device }}
+        #- fstype: {{ fs_type }}
+        #- mkmnt: True
 
     {% endif %}
 
