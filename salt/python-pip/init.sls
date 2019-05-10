@@ -17,8 +17,8 @@ pip_upgrade:
   cmd.run:
     - name: pip install --ignore-installed --upgrade 'pip==9.0.1'
     - unless: pip -V | grep '9.0.1'
-    - require:
-      - pkg: python-pip
+    #- require:
+    #  - pkg: python-pip
     - reload_modules: True
 #END
 
